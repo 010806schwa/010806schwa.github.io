@@ -1,0 +1,382 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f5f1;
+  --paper: #ffffff;
+  --ink: #20232a;
+  --muted: #626a73;
+  --line: #dedbd2;
+  --accent: #2f6f73;
+  --accent-strong: #174f54;
+  --tag: #e7f0ed;
+  --shadow: 0 18px 50px rgba(31, 38, 46, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+  padding: 0 8vw;
+  background: rgba(246, 245, 241, 0.92);
+  border-bottom: 1px solid rgba(222, 219, 210, 0.75);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
+  font-size: 0.95rem;
+}
+
+.nav a {
+  color: var(--muted);
+}
+
+.nav a:hover,
+.nav a.is-active {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 320px) minmax(0, 820px);
+  gap: 54px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 46px auto 80px;
+  align-items: start;
+}
+
+.profile {
+  position: sticky;
+  top: 96px;
+  padding: 30px 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.avatar {
+  display: block;
+  width: 164px;
+  height: 164px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 4px solid #edf3f1;
+  object-fit: cover;
+}
+
+.profile h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.title,
+.affiliation {
+  margin: 8px 0 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.links a,
+.pub-links a,
+.project a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid #cbded9;
+  border-radius: 6px;
+  background: var(--tag);
+  color: var(--accent-strong);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.quick-info {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.quick-info div {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-info dt {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.quick-info dd {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.content {
+  min-width: 0;
+}
+
+.section {
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:first-child {
+  padding-top: 10px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  line-height: 1.25;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.section p {
+  max-width: 760px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.timeline li,
+.publication,
+.experience-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.timeline time,
+.pub-year,
+.experience-item time {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.publication {
+  padding: 20px 0;
+  border-top: 1px solid rgba(222, 219, 210, 0.8);
+}
+
+.authors,
+.venue {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.project {
+  min-height: 190px;
+  padding: 22px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.project p {
+  color: var(--muted);
+}
+
+.project a {
+  margin-top: 10px;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.resume-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid #cbded9;
+  border-radius: 6px;
+  background: var(--accent-strong);
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.experience-item {
+  padding: 20px 0;
+  border-top: 1px solid rgba(222, 219, 210, 0.8);
+}
+
+.experience-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #cbded9;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--accent-strong);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px 20px;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    gap: 12px 16px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 24px;
+  }
+
+  .profile {
+    position: static;
+  }
+
+  .timeline li,
+  .publication,
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .layout {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .links {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    padding: 24px 20px;
+  }
+
+  .avatar {
+    width: 136px;
+    height: 136px;
+  }
+}
